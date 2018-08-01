@@ -9,7 +9,7 @@
   "author": "Almas",
   "license": "ISC",
   "dependencies": {
-    "boom": "^7.2.0",
+    "boom": "^7.1.1",
     "cookie": "^0.3.1",
     "hapi": "^17.5.2",
     "hapi-auth-jwt2": "^8.1.0",

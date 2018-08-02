@@ -1,29 +1,45 @@
 'use strict';
 
 const Hapi = require('hapi');
-const RoutesController = require('../routes/test');
+const pool = require('../routes/database');
+const asynch = require('hapi-async-handler');
+//const RoutesController = require('../routes/resources');
 
-const server = Hapi.server({
-    host: 'localhost',
-    port: 8000    
-});
+const start = async () => {
 
-server.route({
-    method: 'GET',
-    path: '/',
-    handler: RoutesController.hello
-});
+    const server = Hapi.server({
+        host: 'localhost',
+        port: 8000
+    });
 
-const init = async () => {
+    await server.register(asynch);
+
+    // server.auth.strategy('simple', 'basic', { validate });
+
+    server.route({
+        method: 'GET',
+        path: '/',
+        // options: {
+        //     auth: 'simple'
+        // },
+        handler: {
+            // Define a property called "async" that's an async function
+            async async(request, reply) {
+
+                try {
+                    var result = await pool.query('SELECT * FROM users')
+                } catch (err) {
+                    throw new Error(err)
+                }
+
+            }
+            
+        }
+    });
 
     await server.start();
-    console.log(`Server running at: ${server.info.uri}`);
+
+    console.log('server running at: ' + server.info.uri);
 };
 
-process.on('unhandledRejection', (err) => {
-
-    console.log(err);
-    process.exit(1);
-});
-
-init();
+start();

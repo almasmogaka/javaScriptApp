@@ -10,18 +10,18 @@
   "author": "Almas",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.0",
-    "boom": "^7.1.1",
+    "bcrypt": "^3.0.8",
+    "boom": "^7.3.0",
     "cookie": "^0.3.1",
-    "hapi": "^17.5.2",
+    "hapi": "^17.8.5",
     "hapi-async-handler": "^1.0.3",
-    "hapi-auth-jwt2": "^8.1.0",
-    "joi": "^13.5.2",
-    "jsonwebtoken": "^8.3.0",
-    "mysql": "^2.16.0",
-    "util.promisify": "^1.0.0"
+    "hapi-auth-jwt2": "^8.8.1",
+    "joi": "^13.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "util.promisify": "^1.0.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.19.4"
   }
 }

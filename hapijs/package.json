@@ -17,7 +17,7 @@
     "hapi-async-handler": "^1.0.3",
     "hapi-auth-jwt2": "^8.8.1",
     "joi": "^13.7.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mysql": "^2.18.1",
     "util.promisify": "^1.0.1"
   },
